@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\Users\Subjects;
 use Auth;
 
 
@@ -43,7 +44,8 @@ class LoginController extends Controller
 
     public function loginView()
     {
-        return view('auth.login.login');
+        $subjects = Subjects::all();
+        return view('auth.login.login',compact('subjects'));
     }
 
     public function loginPost(Request $request)
