@@ -82,4 +82,9 @@ class User extends Authenticatable
     public function likePostId(){
         return Like::where('like_user_id', Auth::id());
     }
+
+    //科目を選択しているかどうか
+    public function selectedSubjects($user_id){
+        return $selected_subjects = Subjects::users()->where('user_id',$user_id)->get();
+    }
 }

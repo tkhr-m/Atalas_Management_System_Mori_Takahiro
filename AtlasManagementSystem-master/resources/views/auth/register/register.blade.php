@@ -159,7 +159,7 @@
           <label class="d-block m-0" style="font-size:13px">選択科目</label>
           @foreach($subjects as $subject)
           <div class="">
-            <input type="checkbox" name="subject[]" value="{{ $subject->id }}">
+            <input type="checkbox" name="subject[{{$subject->id}}]" value="{{ $subject->id }}">
             <label>{{ $subject->subject }}</label>
           </div>
           @endforeach
@@ -173,7 +173,7 @@
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
           <div class="border-bottom border-primary">
-            <input type="password" class="border-0 w-100 password_confirmation" name="password">
+            <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
         <div class="mt-5 text-right">

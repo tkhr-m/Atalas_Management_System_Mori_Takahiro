@@ -4014,6 +4014,7 @@ class ComposerStaticInite8fd1712de826aad53f5add106203fa9
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'SubjectUsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SubjectUsersTableSeeder.php',
         'SubjectsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SubjectsTableSeeder.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
