@@ -31,15 +31,16 @@ class CalendarView{
     $html[] = '</thead>';
     $html[] = '<tbody>';
 
-    $weeks = $this->getWeeks();
+    $weeks = $this->getWeeks(); //CalendarWeekの配列取得
 
     foreach($weeks as $week){
       $html[] = '<tr class="'.$week->getClassName().'">';
-      $days = $week->getDays();
+      $days = $week->getDays(); //CalendarWeekDayの配列取得
       foreach($days as $day){
-        $startDay = $this->carbon->format("Y-m-01");
-        $toDay = $this->carbon->format("Y-m-d");
+        $startDay = $this->carbon->format("Y-m-01"); //今月の初めの日付
+        $toDay = $this->carbon->format("Y-m-d"); //今日の日付
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
+          //今月の過去の日付かどうか
           $html[] = '<td class="past-day border">';
         }else{
           $html[] = '<td class="border '.$day->getClassName().'">';

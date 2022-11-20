@@ -18,7 +18,7 @@ class CalendarSettingView{
     $html = [];
     $html[] = '<div class="calendar text-center">';
     $html[] = '<table class="table m-auto border adjust-table">';
-    $html[] = '<thead>';
+    $html[] = '<thead>'; //thをグルーピング
     $html[] = '<tr>';
     $html[] = '<th class="border">月</th>';
     $html[] = '<th class="border">火</th>';
@@ -30,7 +30,7 @@ class CalendarSettingView{
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
-    $weeks = $this->getWeeks();
+    $weeks = $this->getWeeks(); //CalendarWeekの配列取得
 
     foreach($weeks as $week){
       $html[] = '<tr class="'.$week->getClassName().'">';
@@ -71,11 +71,11 @@ class CalendarSettingView{
 
   protected function getWeeks(){
     $weeks = [];
-    $firstDay = $this->carbon->copy()->firstOfMonth();
-    $lastDay = $this->carbon->copy()->lastOfMonth();
+    $firstDay = $this->carbon->copy()->firstOfMonth(); //月の初めの日付
+    $lastDay = $this->carbon->copy()->lastOfMonth(); //月の終わりの日付
     $week = new CalendarWeek($firstDay->copy());
     $weeks[] = $week;
-    $tmpDay = $firstDay->copy()->addDay(7)->startOfWeek();
+    $tmpDay = $firstDay->copy()->addDay(7)->startOfWeek(); //次週の初めの日付
     while($tmpDay->lte($lastDay)){
       $week = new CalendarWeek($tmpDay, count($weeks));
       $weeks[] = $week;

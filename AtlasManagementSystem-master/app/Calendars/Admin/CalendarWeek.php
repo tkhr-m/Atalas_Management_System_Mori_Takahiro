@@ -16,10 +16,10 @@ class CalendarWeek{
     return "week-" . $this->index;
   }
 
-  function getDays(){
+  function getDays(){ //CalendarWeekDayの配列を作る
     $days = [];
-    $startDay = $this->carbon->copy()->startOfWeek();
-    $lastDay = $this->carbon->copy()->endOfWeek();
+    $startDay = $this->carbon->copy()->startOfWeek(); //週の初めの日付
+    $lastDay = $this->carbon->copy()->endOfWeek(); //週の終わりの日付
     $tmpDay = $startDay->copy();
 
     while($tmpDay->lte($lastDay)){
