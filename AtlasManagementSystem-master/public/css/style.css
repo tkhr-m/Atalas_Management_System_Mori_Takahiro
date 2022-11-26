@@ -290,10 +290,6 @@ li {
   cursor: pointer;
 }
 
-#accordion {
-  border: black solid 1px;
-}
-
 #accordionItem {
   position: relative;
   cursor: pointer;
@@ -318,6 +314,7 @@ li {
 
 #accordionContent {
   display: none;
+  background-color: white;
 }
 
 #accordionContent input {
