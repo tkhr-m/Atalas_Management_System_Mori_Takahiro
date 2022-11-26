@@ -18,14 +18,19 @@ li {
 
 /* サイドバー */
 .sidebar {
-  width: 220px;
+  width: 15%;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
+  position: fixed;
+  left: 0;
 }
 
 .main-container {
-  width: 100%;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .sidebar p a {
