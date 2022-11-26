@@ -63,4 +63,10 @@ $(function () {
     return false;
   });
 
+  $(document).on('click', '#accordionItem', function () {
+    $(this).next('#accordionContent').slideToggle();
+    $(this).toggleClass('active');
+    return false;
+  });
+
 });

@@ -30,24 +30,33 @@
   </div>
   <div class="other_area border w-25">
     <div class="border m-4">
-      <div class="mb-4"><a  class="btn btn-primary" href="{{ route('post.input') }}">投稿</a></div>
-      <div class="ml-2">
-        <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
-        <input type="submit" value="検索" form="postSearchRequest">
+      <div class="mb-4">
+        <a  class="btn btn-primary w-100" href="{{ route('post.input') }}">投稿</a>
       </div>
-      <input type="submit" name="like_posts" class="category_btn ml-2 mb-4" value="いいねした投稿" form="likeSearchRequest">
-      <input type="submit" name="my_posts" class="category_btn" value="自分の投稿" form="mySearchRequest">
+      <div class="w-100 mb-3 search_btn">
+        <span>検索</span>
+        <input class="rounded-pill w-100 bg-light" type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
+        <button class="rounded-pill w-25 bg-primary text-white" type="submit" form="postSearchRequest"><i class="fas fa-search"></i></button>
+      </div>
+      <input type="submit" name="like_posts" class="category_btn like mb-4" value="いいねした投稿" form="likeSearchRequest">
+      <input type="submit" name="my_posts" class="category_btn like" value="自分の投稿" form="mySearchRequest">
       <ul>
-        @foreach($categories as $category)
-        <li class="main_categories" category_id="{{ $category->id }}"><span class="ml-2 text-black">{{ $category->main_category }}<span>
-        </li>
-          @foreach($category->subCategories as $sub_category)
-            <div class="ml-4 mb-2">
-              <input type="submit" name="category_word" class="category_btn" value="{{$sub_category->sub_category}}"
-              form="postSearchRequest">
+        <span>カテゴリー</span>
+        <div id="accordion">
+          @foreach($categories as $category)
+          <div id="accordionWrap">
+            <div id="accordionItem" class="bg-primary border rounded text-white">
+              <li class="main_categories" category_id="{{ $category->id }}"><span class="ml-2 text-black">{{ $category->main_category }}<span>
+              </li>
+            </div>
+            @foreach($category->subCategories as $sub_category)
+            <div class="mb-2" id="accordionContent">
+              <input type="submit" name="category_word" class="category_btn" value="{{$sub_category->sub_category}}" form="postSearchRequest">
+            </div>
+            @endforeach
             </div>
           @endforeach
-        @endforeach
+        </div>
       </ul>
     </div>
   </div>
