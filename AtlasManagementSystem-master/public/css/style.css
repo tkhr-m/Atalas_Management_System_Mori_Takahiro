@@ -309,6 +309,10 @@ li {
   bottom: 40%;
 }
 
+#accordionContent {
+  display: none;
+}
+
 /* ユーザー検索 */
 .reserve_users_area {
   display: flex;
