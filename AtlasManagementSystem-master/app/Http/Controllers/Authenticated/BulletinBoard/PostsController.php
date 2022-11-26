@@ -11,6 +11,9 @@ use App\Models\Posts\PostComment;
 use App\Models\Posts\Like;
 use App\Models\Users\User;
 use App\Http\Requests\BulletinBoard\PostFormRequest;
+use App\Http\Requests\BulletinBoard\MainCategoryRequest;
+use App\Http\Requests\BulletinBoard\SubCategoryRequest;
+use App\Http\Requests\BulletinBoard\CommentFormRequest;
 use Auth;
 
 class PostsController extends Controller
@@ -26,7 +29,9 @@ class PostsController extends Controller
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
         }else if($request->category_word){
             $sub_category = $request->category_word;
-            $posts = Post::with('user', 'postComments')->get();
+            $sub_category = SubCategory::with('posts')->where('sub_category',$sub_category)->first();
+            $post_id = $sub_category->posts->pluck('id');
+            $posts = Post::with('user', 'postComments')->whereIn('id',$post_id)->get();
         }else if($request->like_posts){
             $likes = Auth::user()->likePostId()->get('like_post_id');
             $posts = Post::with('user', 'postComments')
@@ -54,6 +59,7 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+        $post->subCategories()->attach($request->post_category_id);
         return redirect()->route('post.show');
     }
 
@@ -69,12 +75,17 @@ class PostsController extends Controller
         Post::findOrFail($id)->delete();
         return redirect()->route('post.show');
     }
-    public function mainCategoryCreate(Request $request){
+    public function mainCategoryCreate(MainCategoryRequest $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
+    public function subCategoryCreate(SubCategoryRequest $request){
+        SubCategory::create(['main_category_id' => $request->main_category_id,'sub_category' => $request->sub_category_name]);
+        return redirect()->route('post.input');
+    }
 
-    public function commentCreate(Request $request){
+
+    public function commentCreate(CommentFormRequest $request){
         PostComment::create([
             'post_id' => $request->post_id,
             'user_id' => Auth::id(),
