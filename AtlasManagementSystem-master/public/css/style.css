@@ -276,6 +276,7 @@ li {
 .category_btn.like {
   width: 49%;
   height: 30px;
+  cursor: pointer;
 }
 
 .main_categories span,
@@ -290,6 +291,7 @@ li {
 
 #accordionItem {
   position: relative;
+  cursor: pointer;
 }
 
 #accordionItem::after {
@@ -313,26 +315,41 @@ li {
   display: none;
 }
 
+#accordionContent input {
+  font-size: 12px;
+}
+
 /* ユーザー検索 */
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 850px;
   margin: 10px auto;
   height: 80vh;
   overflow: scroll;
   padding: 10px;
   background: #FFF;
   border-radius: 5px;
+  background-color: #03AAD2
 }
 
 .reserve_users_area span {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .one_person {
+  border-radius: 10px;
   width: 250px;
-  height: 250px;
+  height: 220px;
+  padding-left: 25px;
+  padding-top: 20px;
+  margin: 10px;
+  background-color: #ECF1F6;
+}
+
+.user_name {
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .search_conditions span {

@@ -51,7 +51,7 @@
             </div>
             @foreach($category->subCategories as $sub_category)
             <div class="mb-2" id="accordionContent">
-              <input type="submit" name="category_word" class="category_btn" value="{{$sub_category->sub_category}}" form="postSearchRequest">
+              <input type="submit" name="category_word" class="btn btn-link" value="{{$sub_category->sub_category}}" form="postSearchRequest">
             </div>
             @endforeach
             </div>
