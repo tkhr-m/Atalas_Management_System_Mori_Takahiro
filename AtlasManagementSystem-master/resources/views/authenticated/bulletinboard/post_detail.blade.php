@@ -2,7 +2,7 @@
 @section('content')
 <div class="vh-100 d-flex">
   <div class="w-50 mt-5">
-    <div class="m-3 detail_container">
+    <div class="m-3 border detail_container">
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
