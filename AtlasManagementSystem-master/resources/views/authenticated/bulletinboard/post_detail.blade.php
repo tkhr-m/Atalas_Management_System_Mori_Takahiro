@@ -6,11 +6,14 @@
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
+            @foreach($post->subCategories as $sub_category)
+            <span class="category_btn">{{$sub_category->sub_category}}</span>
+            @endforeach
           </div>
           @if($post->user_id == Auth::id())
           <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('削除してよろしいですか？')">削除</a>
+            <span class="btn btn-primary edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}"><i class="fas fa-edit mr-1"></i>編集</span>
+            <a class="btn btn-danger" href="{{ route('post.delete', ['id' => $post->id]) }}" onclick="return confirm('削除してよろしいですか？')"><i class="fas fa-trash mr-1"></i>削除</a>
           </div>
           @endif
         </div>

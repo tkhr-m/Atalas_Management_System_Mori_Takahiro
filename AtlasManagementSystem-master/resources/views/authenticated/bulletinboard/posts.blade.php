@@ -10,7 +10,7 @@
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       <div class="post_bottom_area d-flex">
         @foreach($post->subCategories as $sub_category)
-        <div class="category_btn">{{$sub_category->sub_category}}</div>
+        <p class="category_btn">{{$sub_category->sub_category}}</p>
         @endforeach
         <div class="d-flex post_status">
           <div class="mr-5">
@@ -30,19 +30,19 @@
   </div>
   <div class="other_area border w-25">
     <div class="border m-4">
-      <div class=""><a href="{{ route('post.input') }}">投稿</a></div>
-      <div class="">
+      <div class="mb-4"><a  class="btn btn-primary" href="{{ route('post.input') }}">投稿</a></div>
+      <div class="ml-2">
         <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
         <input type="submit" value="検索" form="postSearchRequest">
       </div>
-      <input type="submit" name="like_posts" class="category_btn" value="いいねした投稿" form="likeSearchRequest">
+      <input type="submit" name="like_posts" class="category_btn ml-2 mb-4" value="いいねした投稿" form="likeSearchRequest">
       <input type="submit" name="my_posts" class="category_btn" value="自分の投稿" form="mySearchRequest">
       <ul>
         @foreach($categories as $category)
-        <li class="main_categories" category_id="{{ $category->id }}"><span>{{ $category->main_category }}<span>
+        <li class="main_categories" category_id="{{ $category->id }}"><span class="ml-2 text-black">{{ $category->main_category }}<span>
         </li>
           @foreach($category->subCategories as $sub_category)
-            <div class="ml-3">
+            <div class="ml-4 mb-2">
               <input type="submit" name="category_word" class="category_btn" value="{{$sub_category->sub_category}}"
               form="postSearchRequest">
             </div>
