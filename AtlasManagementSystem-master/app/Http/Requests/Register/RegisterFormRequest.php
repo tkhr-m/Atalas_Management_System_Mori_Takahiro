@@ -30,7 +30,7 @@ class RegisterFormRequest extends FormRequest
             'under_name_kana' => 'required|string|regex:/\A[ァ-ヴー]+\z/u|max:30',
             'mail_address' => 'required|email|max:100|unique:users,mail_address',
             'sex' => 'required|numeric|between:1,3',
-            'old_year' => 'required|numeric|between:1985,2010',
+            'old_year' => 'required|numeric|between:2000,now',
             'old_month' => 'required|numeric|between:1,12',
             'old_day' => 'required|numeric|between:1,31',
             'role' => 'required|numeric|between:1,4',

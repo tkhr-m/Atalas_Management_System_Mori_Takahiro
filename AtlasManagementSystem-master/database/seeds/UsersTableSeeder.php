@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "タロウ",
             "mail_address" => "tanaka@gmail.com",
             "sex" => "1",
-            "birth_day" => "19990101",
+            "birth_day" => "20000101",
             "role" => "1",
             "password" => bcrypt("tanakatanaka"),
         ];
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "ジロウ",
             "mail_address" => "satou@gmail.com",
             "sex" => "1",
-            "birth_day" => "19970407",
+            "birth_day" => "20000407",
             "role" => "2",
             "password" => bcrypt("satousatou"),
         ];
@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "サブロウ",
             "mail_address" => "suzuki@gmail.com",
             "sex" => "1",
-            "birth_day" => "19940825",
+            "birth_day" => "20000825",
             "role" => "3",
             "password" => bcrypt("suzukisuzuki"),
         ];
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "アヤカ",
             "mail_address" => "takahashi@gmail.com",
             "sex" => "2",
-            "birth_day" => "19960409",
+            "birth_day" => "20000409",
             "role" => "4",
             "password" => bcrypt("takahashitakahashi"),
         ];
@@ -75,7 +75,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "カナ",
             "mail_address" => "miura@gmail.com",
             "sex" => "2",
-            "birth_day" => "19930115",
+            "birth_day" => "20000115",
             "role" => "1",
             "password" => bcrypt("miuramiura"),
         ];
@@ -89,7 +89,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "ケイスケ",
             "mail_address" => "saitou@gmail.com",
             "sex" => "1",
-            "birth_day" => "19891217",
+            "birth_day" => "20001217",
             "role" => "4",
             "password" => bcrypt("saitousaitou"),
         ];
@@ -103,7 +103,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "リナ",
             "mail_address" => "hayashi@gmail.com",
             "sex" => "2",
-            "birth_day" => "19960303",
+            "birth_day" => "20000303",
             "role" => "1",
             "password" => bcrypt("hayashihayashi"),
         ];
@@ -117,7 +117,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "ユウコ",
             "mail_address" => "tani@gmail.com",
             "sex" => "2",
-            "birth_day" => "19990101",
+            "birth_day" => "20000101",
             "role" => "2",
             "password" => bcrypt("tanitani"),
         ];
@@ -131,7 +131,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "マユ",
             "mail_address" => "matsumoto@gmail.com",
             "sex" => "2",
-            "birth_day" => "19990718",
+            "birth_day" => "20000718",
             "role" => "4",
             "password" => bcrypt("matsumotomatsumoto"),
         ];
@@ -145,7 +145,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "ユウキ",
             "mail_address" => "oikawa@gmail.com",
             "sex" => "1",
-            "birth_day" => "19990129",
+            "birth_day" => "20000129",
             "role" => "3",
             "password" => bcrypt("oikawaoikawa"),
         ];
@@ -159,7 +159,7 @@ class UsersTableSeeder extends Seeder
             "under_name_kana" => "ミズキ",
             "mail_address" => "hori@gmail.com",
             "sex" => "2",
-            "birth_day" => "19970808",
+            "birth_day" => "20000808",
             "role" => "2",
             "password" => bcrypt("horihori"),
         ];
