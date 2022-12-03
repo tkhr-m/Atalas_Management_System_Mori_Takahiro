@@ -49,12 +49,12 @@
               <li class="main_categories" category_id="{{ $category->id }}"><span class="ml-2 text-black">{{ $category->main_category }}<span>
               </li>
             </div>
-            @foreach($category->subCategories as $sub_category)
             <div class="mb-2" id="accordionContent">
-              <input type="submit" name="category_word" class="btn btn-link" value="{{$sub_category->sub_category}}" form="postSearchRequest">
+               @foreach($category->subCategories as $sub_category)
+              <input type="submit" name="category_word" class="btn btn-link d-block" value="{{$sub_category->sub_category}}" form="postSearchRequest">
+              @endforeach
             </div>
-            @endforeach
-            </div>
+          </div>
           @endforeach
         </div>
       </ul>
