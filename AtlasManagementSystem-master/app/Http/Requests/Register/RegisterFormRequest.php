@@ -21,6 +21,17 @@ class RegisterFormRequest extends FormRequest
      *
      * @return array
      */
+
+public function getValidatorInstance(){
+    $old_year = $this->input('old_year');
+    $old_month = $this->input('old_month');
+    $old_day = $this->input('old_day');
+    $birthday = $old_year.'-'.$old_month.'-'.$old_day;
+    $this->merge(['birthday' => $birthday]);
+
+    return parent::getValidatorInstance();
+}
+
     public function rules()
     {
        return [
@@ -30,9 +41,7 @@ class RegisterFormRequest extends FormRequest
             'under_name_kana' => 'required|string|regex:/\A[ァ-ヴー]+\z/u|max:30',
             'mail_address' => 'required|email|max:100|unique:users,mail_address',
             'sex' => 'required|numeric|between:1,3',
-            'old_year' => 'required|numeric|between:2000,now',
-            'old_month' => 'required|numeric|between:1,12',
-            'old_day' => 'required|numeric|between:1,31',
+            'birthday' => 'required|date|after_or_equal:2000-01-01|before_or_equal:now',
             'role' => 'required|numeric|between:1,4',
             'password' => 'required|between:8,30|confirmed',
         ];
@@ -62,15 +71,10 @@ class RegisterFormRequest extends FormRequest
             'sex.required' => '必須項目です。',
             'sex.numeric' => '性別を選択して下さい。',
             'sex.between' => '性別を選択して下さい。',
-            'old_year.required' => '必須項目です。',
-            'old_year.numeric' => '年を選択して下さい。',
-            'old_year.between' => '年を選択して下さい。',
-            'old_month.required' => '必須項目です。',
-            'old_month.numeric' => '月を選択して下さい。',
-            'old_month.between' => '月を選択して下さい。',
-            'old_day.required' => '必須項目です。',
-            'old_day.numeric' => '日を選択して下さい。',
-            'old_day.between' => '日を選択して下さい。',
+            'birthday.required' => '必須項目です。',
+            'birthday.date' => '生年月日を選択して下さい。',
+            'birthday.after_or_equal' => '2000年1月1日以降の日付を選択して下さい。',
+            'birthday.before_or_equal' => '今日以前の日付を選択して下さい。',
             'role.required' => '必須項目です。',
             'role.numeric' => '役職を選択して下さい。',
             'role.between' => '役職を選択して下さい。',
